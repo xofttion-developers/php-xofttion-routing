@@ -1,0 +1,26 @@
+{
+    "name": "xofttion/routing",
+    "type": "library",
+    "license": "MIT",
+    "description": "Librería que proporciona mecanismos para configurar rutas de acceso (Endpoints) de nuestros API Services creados con Laravel de una manera sencilla y rápida",
+    "keywords": [
+        "xofttion",
+        "routing",
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Daniel Andres Castillo Pedroza",
+            "email": "ing.dacastillop@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "illuminate/routing": "5.8.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Xofttion\\Routing\\": "src/"
+        }
+    }
+}
