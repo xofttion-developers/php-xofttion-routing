@@ -7,6 +7,14 @@ use ReflectionMethod;
 
 class Reader {
     
+    // Atributos de la clase Builder
+    
+    /**
+     *
+     * @var Reader 
+     */
+    private static $instance;
+    
     // Constructor de la clase Reader
     
     private function __construct() {
