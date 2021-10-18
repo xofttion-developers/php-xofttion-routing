@@ -74,7 +74,7 @@ class Builder
     public function attachCollection(Router $router, array $endPoints, array $middlewares = null): void
     {
         foreach ($endPoints as $endPoint) {
-            $this->attach($router, $endPoint, $middlewares); // Adjuntando
+            $this->attach($router, $endPoint, $middlewares);
         }
     }
 
