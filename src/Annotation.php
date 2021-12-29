@@ -4,90 +4,42 @@ namespace Xofttion\Routing;
 
 class Annotation
 {
-
     // Constantes de la clase Annotation
 
-    const FUNCTION = "@function";
+    public const HTTP = "@http";
 
-    const HTTP = "@http";
-
-    const ROUTE = "@route";
+    public const ROUTE = "@route";
 
     // Atributos de la clase Annotation
 
-    /**
-     *
-     * @var string 
-     */
-    private $function;
+    private $method;
 
-    /**
-     *
-     * @var string 
-     */
     private $route;
 
-    /**
-     *
-     * @var string 
-     */
     private $http;
+
+    // Constructor de la clase Annotation
+
+    public function __construct(string $method, string $route, string $http)
+    {
+        $this->method = $method;
+        $this->route = $route;
+        $this->http = $http;
+    }
 
     // Métodos de la clase Annotation
 
-    /**
-     * 
-     * @param string $function
-     * @return void
-     */
-    public function setFunction(string $function): void
+    public function getMethod(): string
     {
-        $this->function = $function;
+        return $this->method;
     }
 
-    /**
-     * 
-     * @return string|null
-     */
-    public function getFunction(): ?string
-    {
-        return $this->function;
-    }
-
-    /**
-     * 
-     * @param string $route
-     * @return void
-     */
-    public function setRoute(string $route): void
-    {
-        $this->route = $route;
-    }
-
-    /**
-     * 
-     * @return string|null
-     */
-    public function getRoute(): ?string
+    public function getRoute(): string
     {
         return $this->route;
     }
 
-    /**
-     * 
-     * @param string $http
-     * @return void
-     */
-    public function setHttp(string $http): void
-    {
-        $this->http = $http;
-    }
-
-    /**
-     * 
-     * @return string|null
-     */
-    public function getHttp(): ?string
+    public function getHttp(): string
     {
         return $this->http;
     }
