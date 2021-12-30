@@ -10,6 +10,8 @@ class EndPoint
 
     private $annotation;
 
+    // Constructor de la clase EndPoint
+
     public function __construct(string $controller, Annotation $annotation)
     {
         $this->controller = $controller;
