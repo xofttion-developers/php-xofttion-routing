@@ -44,15 +44,7 @@ class Reader
         $methodName = $method->getName();
 
         foreach ($results as $element) {
-            $endName = strpos($element, '(');
-            $startName = 0;
-
-            $end = strpos($element, ')');
-            $startValue = $endName + 1;
-            $endValue = $end - $endName - 1;
-
-            $name = substr($element, $startName, $endName);
-            $value = substr($element, $startValue, $endValue);
+            list($name, $value) = static::getProp($element);
 
             switch ($name) {
                 case (Annotation::ROUTE):
@@ -66,5 +58,20 @@ class Reader
         }
 
         return new Annotation($methodName, $route, $http);
+    }
+
+    private static function getProp(string $element): array
+    {
+        $endName = strpos($element, '(');
+        $startName = 0;
+
+        $end = strpos($element, ')');
+        $startValue = $endName + 1;
+        $endValue = $end - $endName - 1;
+
+        $name = substr($element, $startName, $endName);
+        $value = substr($element, $startValue, $endValue);
+
+        return [$name, $value];
     }
 }

@@ -4,7 +4,7 @@ namespace Xofttion\Routing;
 
 class Method
 {
-    // Atributos de la clase Method
+    // Constantes de la clase Method
 
     public const POST = 'POST';
 

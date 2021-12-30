@@ -6,9 +6,9 @@ class Annotation
 {
     // Constantes de la clase Annotation
 
-    public const HTTP = "@http";
+    public const HTTP = '@http';
 
-    public const ROUTE = "@route";
+    public const ROUTE = '@route';
 
     // Atributos de la clase Annotation
 
