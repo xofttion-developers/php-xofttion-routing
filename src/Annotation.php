@@ -12,11 +12,11 @@ class Annotation
 
     // Atributos de la clase Annotation
 
-    private $method;
+    private string $method;
 
-    private $route;
+    private string $route;
 
-    private $http;
+    private string $http;
 
     // Constructor de la clase Annotation
 
