@@ -9,7 +9,7 @@ class Mapper
 {
     // Atributos de la clase Mapper
 
-    private $router;
+    private Router $router;
 
     // Constructor de la clase Mapper
 

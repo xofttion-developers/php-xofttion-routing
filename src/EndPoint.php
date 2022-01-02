@@ -6,9 +6,9 @@ class EndPoint
 {
     // Atributos de la clase EndPoint
 
-    private $controller;
+    private string $controller;
 
-    private $annotation;
+    private Annotation $annotation;
 
     // Constructor de la clase EndPoint
 
