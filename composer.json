@@ -2,7 +2,7 @@
   "name": "xofttion/routing",
   "type": "library",
   "license": "MIT",
-  "description": "Librería de Xofttion con funcionalidades para configurar rutas de acceso (endpoints) de nuestros API Services creados con Laravel de una manera sencilla y rápida",
+  "description": "Package HTTP and API services of Xofttion",
   "keywords": [
     "xofttion",
     "routing",
@@ -17,8 +17,8 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "php": "^7.4.0",
-    "illuminate/routing": "7.0.*"
+    "php": "^7.3",
+    "illuminate/routing": "^8.0"
   },
   "autoload": {
     "psr-4": {

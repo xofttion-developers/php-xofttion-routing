@@ -1,7 +1,7 @@
 ## Xofttion Routing
 
-Librería de Xofttion con funcionalidades para configurar rutas de acceso (Endpoints) de nuestros API Services creados con Laravel de una manera sencilla y rápida
+Package HTTP and API services of Xofttion
 
-## Instalación
+## Installation
 
     composer require xofttion/routing
