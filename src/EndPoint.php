@@ -2,23 +2,17 @@
 
 namespace Xofttion\Routing;
 
-class EndPoint
+class Endpoint
 {
-    // Atributos de la clase EndPoint
-
     private string $controller;
 
     private Annotation $annotation;
-
-    // Constructor de la clase EndPoint
 
     public function __construct(string $controller, Annotation $annotation)
     {
         $this->controller = $controller;
         $this->annotation = $annotation;
     }
-
-    // Métodos de la clase EndPoint
 
     public function getController(): string
     {

@@ -7,65 +7,57 @@ use Illuminate\Routing\Router;
 
 class Mapper
 {
-    // Atributos de la clase Mapper
-
     private Router $router;
-
-    // Constructor de la clase Mapper
 
     private function __construct(Router $router)
     {
         $this->router = $router;
     }
 
-    // Métodos estáticos de la clase Mapper
-
     public static function build(Router $router): self
     {
         return new static($router);
     }
 
-    // Métodos estátics de la clase Mapper
-
     public function reader(string $controller, array $middlewares = null): void
     {
-        $endPoints = $this->getEndPoints($controller);
+        $endpoints = $this->getEndpoints($controller);
 
-        foreach ($endPoints as $endPoint) {
-            $this->attach($endPoint, $middlewares);
+        foreach ($endpoints as $endpoint) {
+            $this->attach($endpoint, $middlewares);
         }
     }
 
-    protected function getEndPoints(string $controller): array
+    protected function getEndpoints(string $controller): array
     {
         $annotations = Reader::controller($controller);
 
-        $endPoints = [];
+        $endpoints = [];
 
         foreach ($annotations as $annotation) {
-            $endPoint = new EndPoint($controller, $annotation);
+            $endpoint = new Endpoint($controller, $annotation);
 
-            $endPoints[] = $endPoint;
+            $endpoints[] = $endpoint;
         }
 
-        return $endPoints;
+        return $endpoints;
     }
 
-    private function attach(EndPoint $endPoint, array $middlewares = null): void
+    private function attach(Endpoint $endpoint, array $middlewares = null): void
     {
-        $route = $this->getRoute($endPoint);
+        $route = $this->getRoute($endpoint);
 
-        $routeMiddlewares = $this->getMiddlewares($endPoint, $middlewares);
+        $routeMiddlewares = $this->getMiddlewares($endpoint, $middlewares);
 
         $route->middleware($routeMiddlewares);
     }
 
-    protected function getRoute(EndPoint $endPoint): Route
+    protected function getRoute(Endpoint $endpoint): Route
     {
-        $action = $endPoint->getAction();
-        $route = $endPoint->getRoute();
+        $action = $endpoint->getAction();
+        $route = $endpoint->getRoute();
 
-        switch ($endPoint->getHttp()) {
+        switch ($endpoint->getHttp()) {
             case (Method::POST):
                 return $this->router->post($route, $action);
 
@@ -83,7 +75,7 @@ class Mapper
         }
     }
 
-    protected function getMiddlewares(EndPoint $endPoint, array $middlewares = null): array
+    protected function getMiddlewares(Endpoint $endpoint, array $middlewares = null): array
     {
         return [];
     }
