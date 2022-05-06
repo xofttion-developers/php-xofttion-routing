@@ -4,9 +4,9 @@ namespace Xofttion\Routing;
 
 class Annotation
 {
-    public const HTTP = '@http';
-
     public const ROUTE = '@route';
+
+    public const HTTP = '@http';
 
     private string $method;
 
@@ -17,8 +17,8 @@ class Annotation
     public function __construct(string $method, string $route, string $http)
     {
         $this->method = $method;
-        $this->route = $route;
         $this->http = $http;
+        $this->route = $route;
     }
 
     public function getMethod(): string
