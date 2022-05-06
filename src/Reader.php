@@ -7,11 +7,7 @@ use ReflectionMethod;
 
 class Reader
 {
-    // Constantes de la clase Reader
-
     private const CHARS_CLEAN = [' ', '\r', '\n', '/**', '*/'];
-
-    // Métodos de la clase Reader
 
     public static function controller(string $class): array
     {
